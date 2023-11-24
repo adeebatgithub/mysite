@@ -1,0 +1,210 @@
+body{
+    background-image : url('https://wallpapercave.com/wp/wp9764093.jpg');
+}
+a{
+    color : white;
+    text-decoration : none;
+}
+a:hover{
+    color : blue;
+}
+h1{
+    margin: 0;
+}
+button{
+    color: white;
+    background: blue;
+    border: none;
+    font-weight: 600;
+}
+button:hover{
+    color: black;
+    background: white;
+}
+
+.ctnr{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1280px;
+    min-width: 350px;
+}
+
+.ctnr-tb{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 1em 0;
+    background: #333;
+    border-radius: 5px;
+}
+
+.ctnr-tb h1{
+    font-size: 3rem;
+    margin-left: 5em;
+}
+
+.ctnr-tb button{
+    font-size: 1.1rem;
+    padding: 0.3em 0.6em;
+    margin-right: 3em;
+    border-radius: 5px;
+}
+
+.ctnr-bd{
+    margin-top: 8em;
+    display: flex;
+    height: auto;
+}
+
+.ctnr-bd .txt{
+    color: white;
+    width: 55%;
+    padding: 0 5em;
+}
+
+.ctnr-bd h2{
+    font-size: 3rem;
+}
+
+.ctnr-bd p{
+    text-align: justify;
+    margin-top: 3em;
+    font-size: 1.3rem;
+}
+
+.ctnr-bd form{
+    background: #333;
+    color: white;
+    border: 10px solid white;
+    padding: 1em;
+    margin: 0;
+    width: 350px;
+}
+
+.ctnr-bd form h2{
+    text-align: center;
+}
+
+.ctnr-bd form label{
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.2em;
+}
+
+.ctnr-bd form input{
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+}
+
+.ctnr-bd form p{
+    text-align: center;
+}
+
+.ctnr-bd form .fp{
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.ctnr-bd form .err{
+    margin-top: 3em;
+    margin-bottom: 0em;
+    text-align: justify;
+}
+
+.ctnr-bd form .msg{
+    color: whitesmoke;
+}
+
+.ctnr-bd form button{
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1em;
+}
+
+@media (max-width:1280px) {
+
+    .ctnr-bd .txt{
+        padding: 0 2em;
+    }
+
+}
+
+@media (max-width: 975px) {
+
+    .ctnr-bd{
+        margin-top: 4em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .ctnr-bd .txt p{
+        display: none;
+    }
+
+    .ctnr-bd .txt h2{
+        margin: 0;
+        text-align: center;
+
+    }
+
+    .ctnr-bd form{
+        margin-top: 2em;
+        width: 300px;
+        flex-grow: 1;
+    }
+
+}
+
+@media (max-width: 720px) {
+
+    .ctnr-tb h1{
+        margin-left: 3em;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .ctnr-tb h1{
+        margin-left: 2em;
+        font-size: 2.5rem;
+    }
+
+    .ctnr-tb button{
+        font-size: 0.9rem;
+    }
+
+    .ctnr-bd{
+        margin-top: 5em;
+    }
+
+    .ctnr-bd form{
+        width: 250px;
+    }
+
+    .ctnr-bd h2{
+        font-size: 2rem;
+    }
+
+    .ctnr-bd form label{
+        font-size: 1.3rem;
+    }
+
+    .ctnr-bd p{
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .ctnr-tb h1{
+        margin-left: 2em;
+        font-size: 2rem;
+    }
+}
