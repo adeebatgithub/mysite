@@ -2,52 +2,54 @@
 
 {% block title %} Signup {% endblock title %}
 
+{% block navbar %}
+
+<div class='ctnr ctnr-tb bgc-1'>
+    <h1>Test Site</h1>
+    <a href='{% url "login" %}'><button>Log in</button></a>
+</div>
+
+{% endblock navbar %}
+
 {% block content %}
-<body class="bgi-1">
     
-    <div class='ctnr ctnr-tb bgc-1'>
-        <h1>Test Site</h1>
-        <a href='{% url "login" %}'><button>Log in</button></a>
+<div class="ctnr ctnr-bd">
+    <div class='txt'>
+        <h2> Welcome </h2>
+        <p>
+            This technique may seem obvious but is often overlooked. A simple “thank you” email may be that little thing that makes your customers remember you.
+            Think of it this way – today, whenever you open a website or browse a web store, you are invited to sign up, subscribe, provide your details, or otherwise engage with the business. 
+            Sometimes you accept these invitations, most often you ignore them, but they are everywhere! If among this mass of emails and subscription invitations, you find one that thanks you for your effort, that might mean a lot. 
+        </p>
     </div>
-    
-    <div class="ctnr ctnr-bd">
-        <div class='txt'>
-            <h2> Welcome </h2>
-            <p>
-                This technique may seem obvious but is often overlooked. A simple “thank you” email may be that little thing that makes your customers remember you.
-                Think of it this way – today, whenever you open a website or browse a web store, you are invited to sign up, subscribe, provide your details, or otherwise engage with the business. 
-                Sometimes you accept these invitations, most often you ignore them, but they are everywhere! If among this mass of emails and subscription invitations, you find one that thanks you for your effort, that might mean a lot. 
-            </p>
-        </div>
-        <form class="ctnr-frm bgc-1 wb" method='post'>
-            {% csrf_token %}
-            <h2> Signup </h2>
-    
-            <label for="uname">username</label>
-            <input type="username" placeholder="username" id="uname" name="username" required>
-            <label for="passw1">password</label>
-            <input type="password" placeholder="password" id="passw1" name="password1" required>
-            <label for="passw2">confirm password</label>
-            <input type="password" placeholder="confirm password" id="passw2" name="password2" required>
+    <form class="ctnr-frm bgc-1 wb" method='post'>
+        {% csrf_token %}
+        <h2> Signup </h2>
+
+        <label for="uname">username</label>
+        <input type="username" placeholder="username" id="uname" name="username" required>
+        <label for="passw1">password</label>
+        <input type="password" placeholder="password" id="passw1" name="password1" required>
+        <label for="passw2">confirm password</label>
+        <input type="password" placeholder="confirm password" id="passw2" name="password2" required>
+        
+        <div class="msg">
             
-            <div class="msg">
-                
-                {% if messages %}
-                    {% for message in messages %}
-                    <p class="err">{{ message }}</p>
-                    <p class="err">ERROR MSG</p>
-                    {% endfor %}
-                {% elif form.errors %}
-                    {% for error in form.errors.values %}
-                    <p class="err"> {{ error.as_text }} </p>
-                    {% endfor %}
-                {% else %}
-                    <p class="err" style="color: #333;">=======</p>
-                {% endif %}
-            </div>
-    
-            <button class="frm-btn" type="submit">Signup</button>
-        </form>
-    </div>
-</body>
+            {% if messages %}
+                {% for message in messages %}
+                <p class="err">{{ message }}</p>
+                <p class="err">ERROR MSG</p>
+                {% endfor %}
+            {% elif form.errors %}
+                {% for error in form.errors.values %}
+                <p class="err"> {{ error.as_text }} </p>
+                {% endfor %}
+            {% else %}
+                <p class="err" style="color: #333;">=======</p>
+            {% endif %}
+        </div>
+
+        <button class="frm-btn" type="submit">Signup</button>
+    </form>
+</div>
 {% endblock %}

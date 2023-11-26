@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic as gv
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 
@@ -11,6 +12,10 @@ class Signup_View(SuccessMessageMixin, gv.CreateView):
     success_url = reverse_lazy("login")
     context_object_name = "form"
     success_message = "signup successful"
+
+class Profile_View(LoginRequiredMixin, gv.TemplateView):
+
+    template_name = "profile.html"
     
 class Test(gv.FormView, SuccessMessageMixin):
     

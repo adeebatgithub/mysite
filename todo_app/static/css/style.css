@@ -2,30 +2,36 @@
     Global
 =================================================*/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
+    background: #008080;
     color: white;
 }
-a{
-    text-decoration : none;
+
+a {
+    text-decoration: none;
     color: white;
 }
-button{
+
+button {
     border: none;
     font-weight: 600;
 
     color: white;
     background-color: blue;
 }
-button:hover{
+
+button:hover {
     color: black;
     background-color: white;
 }
-input{
+
+input {
     outline: none;
     border-radius: 5px;
 }
@@ -34,16 +40,11 @@ input{
     Utilities
 =================================================*/
 
-.bgc-1{
+.bgc-1 {
     background: #333;
 }
-.bgc-2{
-    background: #008080;
-}
-.bgi-1{
-    background-image : url('https://wallpapercave.com/wp/wp9764093.jpg');
-}
-.wb{
+
+.wb {
     border: 10px solid white;
 }
 
@@ -51,7 +52,7 @@ input{
     Layout
 =================================================*/
 
-.ctnr{
+.ctnr {
     width: 90%;
     height: auto;
     margin: 0 auto;
@@ -59,12 +60,14 @@ input{
     min-width: 200px;
     display: flex;
 }
-.ctnr-tb{
+
+.ctnr-tb {
     align-items: center;
     padding: 1em 0;
     border-radius: 20px;
 }
-.ctnr-bd{
+
+.ctnr-bd {
     margin-top: 5em;
     height: auto;
     justify-content: center;
@@ -72,13 +75,13 @@ input{
 
 /*================ signup/login =================*/
 
-.ctnr-frm{
+.ctnr-frm {
     padding: 1em;
 }
 
 /*=================== profile ===================*/
 
-.crd{
+.crd {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -91,50 +94,58 @@ input{
     Components
 =================================================*/
 
-.ctnr-tb h1{
+.ctnr-tb h1 {
     font-size: 3rem;
     flex-grow: 1;
     text-align: center;
 }
-.ctnr-tb a:hover{
+
+.ctnr-tb a:hover {
     color: rgb(251, 57, 57);
 }
-.ctnr-tb button{
+
+.ctnr-tb button {
     display: none;
     font-size: 1rem;
     padding: 0.4em 0.6em;
     margin-right: 3em;
     border-radius: 5px;
 }
-.ctnr-bd h2{
+
+.ctnr-bd h2 {
     font-size: 3rem;
     margin: 0.8em 0;
 }
-.ctnr-frm h2{
+
+.ctnr-frm h2 {
     text-align: center;
 }
-.ctnr-frm label{
+
+.ctnr-frm label {
     display: block;
     font-size: 1.5rem;
     margin-bottom: 0.2em;
 }
-.ctnr-frm input{
+
+.ctnr-frm input {
     font-size: 1.2rem;
     width: 100%;
     margin-bottom: 0.5em;
     padding: 0.5em 0.8em;
 }
-.ctnr-frm p{
+
+.ctnr-frm p {
     text-align: center;
 }
-.txt p{
+
+.txt p {
     text-align: justify;
     font-size: 1.3rem;
 }
 
 /*=================== profile ===================*/
 
-.crd img{
+.crd img {
     width: 50%;
 }
 
@@ -142,51 +153,58 @@ input{
     Classes
 =================================================*/
 
-.txt{
+.txt {
     display: none;
     color: white;
     width: 55%;
     padding: 0 5em;
     flex-grow: 1;
 }
-.fp{
+
+.fp {
     margin-top: 0;
     margin-bottom: 0.5em;
     font-size: 1.2rem;
     font-weight: 500;
 }
-.fp:hover{
+
+.fp:hover {
     color: blue;
 }
-.err{
+
+.err {
     color: whitesmoke;
     margin-top: 3em;
     margin-bottom: 0em;
     text-align: justify;
 }
-.frm-btn{
+
+.frm-btn {
     width: 100%;
     padding: 1em 0;
     font-size: 1em;
     margin-top: 1.2em;
 }
-.ds{
+
+.ds {
     justify-content: center;
     margin-top: 1em;
     font-size: 1.2rem;
     font-weight: 1000;
 }
-.ds:hover{
+
+.ds:hover {
     color: rgb(251, 57, 57);
 }
 
 /*=================== profile ===================*/
 
-.dtls{
+.dtls {
     width: 100%;
     margin-top: 2em;
 }
-.dtl{
+
+.dtl {
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;
@@ -200,20 +218,22 @@ input{
 
 @media (min-width: 1024px) {
 
-    .ctnr-bd{
+    .ctnr-bd {
         justify-content: flex-end;
     }
-    .ctnr-tb button{
+
+    .ctnr-tb button {
         display: block;
     }
 
 
-    .ds{
+    .ds {
         display: none;
     }
-    .txt{
+
+    .txt {
         display: block;
         flex-grow: 1;
     }
-    
+
 }

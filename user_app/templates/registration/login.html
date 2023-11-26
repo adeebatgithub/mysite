@@ -2,54 +2,58 @@
 
 {% block title %} Login {% endblock title %}
 
-{% block content %}
-<body class="bgi-1">
-    
-    <div class='ctnr ctnr-tb bgc-1'>
-        <h1>Test Site</h1>
-        <a href='{% url "signup" %}'><button> Sign up </button></a>
-    </div>
-    <div class="ctnr ctnr-bd">
-        <div class='txt'>
-            <h2>Welcome</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Eget arcu dictum varius duis at consectetur lorem donec massa. Dis parturient montes nascetur ridiculus mus mauris vitae. Non tellus orci ac auctor augue mauris augue neque. Et magnis dis parturient montes nascetur ridiculus mus mauris. Mi proin sed libero enim sed faucibus turpis. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. Vulputate mi sit amet mauris commodo quis imperdiet. Maecenas sed enim ut sem viverra aliquet eget sit amet.
-                lorem
-            </p>
-        </div>
-    
-        <form class="ctnr-frm bgc-1 wb" method='post'>
-            {% csrf_token %}
-            <h2> LOGIN </h2>
-    
-            <label for="username"> username </label>
-            <input type="username" id="username" placeholder="username" name="username">
-            <label for="password"> password </label>
-            <input type="password" id="password" placeholder="password" name="password">
-            
-            <div class="msg">
-                
-                {% if messages %}
-                    {% for message in messages %}
-                    <p class="err">{{ message }}</p>
-                    <p class="err">ERROR MSG</p>
-                    {% endfor %}
-                {% elif form.errors %}
-                    {% for error in form.errors.values %}
-                    <p class="err"> {{ error.as_text }} </p>
-                    {% endfor %}
-                {% else %}
-                    <p class="err" style="color: #333;">.</p>
-                {% endif %}
-            </div>
-    
-            <a href="#"><p class="fp"> forgotten password? </p></a>
-    
-            <button class="frm-btn" type="submit">Login</button>
-    
-        </form>
-    </div>
-    <a class="ctnr ds" href="{% url 'signup' %}"> Signup </a>
+{% block navbar %}
 
-</body>
+<div class='ctnr ctnr-tb bgc-1'>
+    <h1>Test Site</h1>
+    <a href='{% url "signup" %}'><button> Sign up </button></a>
+</div>
+
+
+{% endblock navbar %}
+
+{% block content %}
+    
+<div class="ctnr ctnr-bd">
+    <div class='txt'>
+        <h2>Welcome</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Eget arcu dictum varius duis at consectetur lorem donec massa. Dis parturient montes nascetur ridiculus mus mauris vitae. Non tellus orci ac auctor augue mauris augue neque. Et magnis dis parturient montes nascetur ridiculus mus mauris. Mi proin sed libero enim sed faucibus turpis. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. Vulputate mi sit amet mauris commodo quis imperdiet. Maecenas sed enim ut sem viverra aliquet eget sit amet.
+            lorem
+        </p>
+    </div>
+
+    <form class="ctnr-frm bgc-1 wb" method='post'>
+        {% csrf_token %}
+        <h2> LOGIN </h2>
+
+        <label for="username"> username </label>
+        <input type="username" id="username" placeholder="username" name="username">
+        <label for="password"> password </label>
+        <input type="password" id="password" placeholder="password" name="password">
+        
+        <div class="msg">
+            
+            {% if messages %}
+                {% for message in messages %}
+                <p class="err">{{ message }}</p>
+                <p class="err">ERROR MSG</p>
+                {% endfor %}
+            {% elif form.errors %}
+                {% for error in form.errors.values %}
+                <p class="err"> {{ error.as_text }} </p>
+                {% endfor %}
+            {% else %}
+                <p class="err" style="color: #333;">.</p>
+            {% endif %}
+        </div>
+
+        <a href="{% url "password_reset" %}"><p class="fp"> forgotten password? </p></a>
+
+        <button class="frm-btn" type="submit">Login</button>
+
+    </form>
+</div>
+<a class="ctnr ds" href="{% url 'signup' %}"> Signup </a>
+
 {% endblock content %}

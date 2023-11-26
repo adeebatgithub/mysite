@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block navbar %}
+
+<nav class='nav'>
+    <div class="ctnr ctnr-tb bgc-1">
+        <h1><a href="#"> Test Site </a></h1>
+        <a href="{% url "logout" %}"><button> Logout </button></a>
+    </div>
+</nav>
+
+{% endblock navbar %}
+
+{% block content %}
+
+<div class="ctnr ctnr-bd">
+    <div class="crd bgc-1 wb">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg">
+        <div class="dtls">
+            <div class="dtl">
+                <p>First name</p>
+                <p>John</p>
+            </div>
+            <div class="dtl">
+                <p>Last name</p>
+                <p>Carter</p>
+            </div>
+            <div class="dtl">
+                <p>Username</p>
+                <p>John</p>
+            </div>
+            <div class="dtl">
+                <p>Email</p>
+                <p>John@example.com</p>
+            </div>
+            <div class="dtl">
+                <p>Contact</p>
+                <p>0000000000</p>
+            </div>
+        </div>
+        <button class="frm-btn">Edit</button>
+    </div>
+</div>
+
+{% endblock content %}
