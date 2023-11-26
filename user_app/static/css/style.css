@@ -1,13 +1,18 @@
 /* ==============================================
-    elements
-==================================================*/
+    Global
+=================================================*/
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+}
 a{
     text-decoration : none;
     color: white;
-}
-h1{
-    margin: 0;
 }
 button{
     border: none;
@@ -24,22 +29,17 @@ input{
     outline: none;
     border-radius: 5px;
 }
-nav{
-    border-radius: 20px;
-}
 
 /* ==============================================
-    classes
-==================================================*/
+    Utilities
+=================================================*/
 
 .bgc-1{
     background: #333;
 }
-
 .bgc-2{
     background: #008080;
 }
-
 .bgi-1{
     background-image : url('https://wallpapercave.com/wp/wp9764093.jpg');
 }
@@ -47,91 +47,108 @@ nav{
     border: 10px solid white;
 }
 
+/* ==============================================
+    Layout
+=================================================*/
+
 .ctnr{
     width: 90%;
     height: auto;
     margin: 0 auto;
     max-width: 1280px;
-    min-width: 350px;
+    min-width: 200px;
     display: flex;
-    
 }
-
 .ctnr-tb{
-    justify-content: flex-end;
-    color: white;
     align-items: center;
     padding: 1em 0;
     border-radius: 20px;
 }
+.ctnr-bd{
+    margin-top: 5em;
+    height: auto;
+    justify-content: center;
+}
+
+/*================ signup/login =================*/
+
+.ctnr-frm{
+    padding: 1em;
+}
+
+/*=================== profile ===================*/
+
+.crd{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    max-width: 350px;
+}
+
+/* ==============================================
+    Components
+=================================================*/
 
 .ctnr-tb h1{
     font-size: 3rem;
-    margin-left: 2em;
     flex-grow: 1;
+    text-align: center;
 }
-
 .ctnr-tb a:hover{
     color: rgb(251, 57, 57);
 }
-
 .ctnr-tb button{
+    display: none;
     font-size: 1rem;
     padding: 0.4em 0.6em;
     margin-right: 3em;
     border-radius: 5px;
 }
-
-.ctnr-bd{
-    margin-top: 8em;
-    height: auto;
-    justify-content: flex-end;
-}
-
-.txt{
-    color: white;
-    width: 55%;
-    padding: 0 5em;
-    flex-grow: 1;
-}
-
 .ctnr-bd h2{
     font-size: 3rem;
+    margin: 0.8em 0;
 }
-
-.txt p{
-    text-align: justify;
-    font-size: 1.3rem;
-}
-
-.ctnr-frm{
-    color: white;
-    padding: 1em;
-    margin: 0;
-    width: 25%;
-}
-
 .ctnr-frm h2{
     text-align: center;
 }
-
 .ctnr-frm label{
     display: block;
     font-size: 1.5rem;
     margin-bottom: 0.2em;
 }
-
 .ctnr-frm input{
     font-size: 1.2rem;
     width: 100%;
     margin-bottom: 0.5em;
     padding: 0.5em 0.8em;
 }
-
 .ctnr-frm p{
     text-align: center;
 }
+.txt p{
+    text-align: justify;
+    font-size: 1.3rem;
+}
 
+/*=================== profile ===================*/
+
+.crd img{
+    width: 50%;
+}
+
+/* ==============================================
+    Classes
+=================================================*/
+
+.txt{
+    display: none;
+    color: white;
+    width: 55%;
+    padding: 0 5em;
+    flex-grow: 1;
+}
 .fp{
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -141,89 +158,62 @@ nav{
 .fp:hover{
     color: blue;
 }
-
 .err{
     color: whitesmoke;
     margin-top: 3em;
     margin-bottom: 0em;
     text-align: justify;
 }
-
 .frm-btn{
     width: 100%;
     padding: 1em 0;
     font-size: 1em;
+    margin-top: 1.2em;
+}
+.ds{
+    justify-content: center;
+    margin-top: 1em;
+    font-size: 1.2rem;
+    font-weight: 1000;
+}
+.ds:hover{
+    color: rgb(251, 57, 57);
 }
 
-.crd{
-    color: white;
-    margin: 0 auto;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-}
-
-.crd img{
-    width: 50%;
-}
+/*=================== profile ===================*/
 
 .dtls{
-    width: 90%;
+    width: 100%;
     margin-top: 2em;
 }
-
 .dtl{
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;
     font-weight: 550;
+    padding: 0.5em 0;
 }
 
 /* ==============================================
     media quires
-==================================================*/
+=================================================*/
 
-@media (max-width:1024px) {
-
-    .txt{
-        padding: 0 2em;
-    }
-
-    .ctnr-frm{
-        width: 32%;
-    }
-
-}
-
-@media (max-width:768px) {
+@media (min-width: 1024px) {
 
     .ctnr-bd{
-        flex-direction: column;
-        align-items: center;
-
-        outline: 2px solid red;
+        justify-content: flex-end;
+    }
+    .ctnr-tb button{
+        display: block;
     }
 
-    .txt{
+
+    .ds{
         display: none;
     }
-
-    .ctnr-frm{
-        width: 45%;
+    .txt{
+        display: block;
+        flex-grow: 1;
     }
-
-}
-
-@media (max-width:426px) {
-
-    .ctnr-tb button{
-        font-size: 0.5rem;
-    }
-
-    .ctnr-frm{
-        width: 85%;
-    }
-
+    
 }
